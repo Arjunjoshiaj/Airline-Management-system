@@ -1,0 +1,32 @@
+// Flight.java
+public class Flight {
+    private String flightNumber;
+    private String destination;
+    private boolean available;
+
+    public Flight(String flightNumber, String destination) {
+        this.flightNumber = flightNumber;
+        this.destination = destination;
+        this.available = true; // Flights are available by default
+    }
+
+    public String getFlightNumber() {
+        return flightNumber;
+    }
+
+    public String getDestination() {
+        return destination;
+    }
+
+    public boolean isAvailable() {
+        return available;
+    }
+
+    public void bookFlight() {
+        if (available) {
+            available = false; // Mark as booked
+        } else {
+            throw new IllegalStateException("Flight is already booked.");
+        }
+    }
+}
